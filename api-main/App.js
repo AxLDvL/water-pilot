@@ -9,9 +9,6 @@ require ('./controllers/AutoController');
 const valveSettingsRoute = require ('./routers/ValveSettingsRoute');
 const scheduleRoute = require ('./routers/ScheduleRoute');
 
-
->>>>>>> apifront
-
 dotenv.config();
 const app = express();
 

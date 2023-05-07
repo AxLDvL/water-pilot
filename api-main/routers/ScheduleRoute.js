@@ -12,7 +12,7 @@ router.route('/')
             const schedules = await getSchedules(req.idSetting);
             res.status(200).json(schedules)
         }catch(err){
-            res.status(400).json(errorMsg:"Un problème est survenu lors de la récupération des plages horaires:"+err})
+            res.status(400).json({errorMsg:"Un problème est survenu lors de la récupération des plages horaires:"+err})
         }
     })
     .post (async (req,res) => {
@@ -26,7 +26,7 @@ router.route('/')
     })
 router.route('/:idSchedule')
     .delete(async (req, res) => {
-        const req.idSchedule = parseInt(req.params.idSchedule) ;
+        req.idSchedule = parseInt(req.params.idSchedule) ;
         try {
             const deleteSc = await deleteSchedule (req.idSchedule);
             res.status(200).json(deleteSc)
@@ -35,7 +35,7 @@ router.route('/:idSchedule')
         }
     })
     .patch(async (req,res) => {
-        const req.idSchedule = parseInt(req.params.idSchedule) ;
+        req.idSchedule = parseInt(req.params.idSchedule) ;
         const {hourStart, hourEnd, days} = req.body;
         try{
             const patchSchedule = await updateSchedule(hourStart, hourEnd, days, req.idSchedule, req.idSetting, req.idValve, req.userId);

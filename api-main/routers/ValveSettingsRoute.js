@@ -27,7 +27,7 @@ router.route('/')
     })
     router.route('/:idSettings')
     .delete (authenticate,async (req,res) => {
-        const req.idSettings = parseInt (req.params.idSettings);
+         req.idSettings = parseInt (req.params.idSettings);
         try {
             //A faire!:
             //ajouter la suppression des schedules affiliés à ce setting!
@@ -40,7 +40,7 @@ router.route('/')
         }
     })
     .put (authenticate,async (req,res) => {
-        const req.idSettings = parseInt (req.params.idSettings);
+        req.idSettings = parseInt (req.params.idSettings);
         const {rainThreshold, moistureThreshold, duration, isAutomatic} = req.body;
         try{
             const updateValveSetting = await updateValveSetting(rainThreshold, moistureThreshold, duration, isAutomatic, req.idSettings, req.userId,req.idValve)

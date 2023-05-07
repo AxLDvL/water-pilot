@@ -8,10 +8,10 @@ const giveValvePostion = async (userId, idElectrovalve) => {
     //console.log('giveValve', getElectrovalves.find(e => e.id == idElectrovalve))
     if (valve) {
         return ({
-            exists:true,
-            position:valve.position,
-            errmsg:""
-        );
+            exists: true,
+            position: valve.position,
+            errmsg: ""
+        })
     }else{
         return ({
             exists:false,
