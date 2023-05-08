@@ -8,11 +8,15 @@ const wateringRoute = require('./routers/WateringRoute');
 require ('./controllers/AutoController');
 const valveSettingsRoute = require ('./routers/ValveSettingsRoute');
 const scheduleRoute = require ('./routers/ScheduleRoute');
+const helmet = require("helmet")
 
 dotenv.config();
 const app = express();
 
 app.use(express.json());
+
+//middleware helmet pour sécuriser les headers
+app.use(helmet())
 
 app.use('/watering', wateringRoute)
 app.use('/user', userRoute);
